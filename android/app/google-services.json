@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "787142630332",
+    "project_id": "mood-board-b0a45",
+    "storage_bucket": "mood-board-b0a45.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:787142630332:android:d84c5aa2f234bac2ada9b9",
+        "android_client_info": {
+          "package_name": "com.example.mood_board"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxxCQYAQvIFLblf8gqo0gNKrXBQ42qVEU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
