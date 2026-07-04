@@ -51,3 +51,8 @@ final moodControllerProvider = NotifierProvider<MoodController, MoodState>(() {
 final moodServiceProvider = Provider<MoodService>((ref) {
   return MoodService();
 });
+
+// watch moods stream live
+final moodsStreamProvider = StreamProvider<List<Mood>>((ref) {
+  return ref.watch(moodServiceProvider).getMoods();
+});
