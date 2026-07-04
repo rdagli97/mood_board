@@ -5,7 +5,6 @@ import 'package:mood_board/firebase_options.dart';
 import 'package:mood_board/providers/auth_provider.dart';
 import 'package:mood_board/screens/auth_screen.dart';
 import 'package:mood_board/screens/mood_board_screen.dart';
-import 'package:mood_board/widgets/add_mood_dialog.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,6 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Mood Board',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,

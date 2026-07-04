@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mood_board/providers/auth_provider.dart';
 import 'package:mood_board/providers/mood_provider.dart';
@@ -7,6 +6,15 @@ import 'package:mood_board/widgets/add_mood_dialog.dart';
 
 class MoodBoardScreen extends ConsumerWidget {
   const MoodBoardScreen({super.key});
+
+  String _formatTime(DateTime time) {
+    final now = DateTime.now();
+    final diff = now.difference(time);
+    if (diff.inMinutes < 1) return 'now';
+    if (diff.inHours < 1) return '${diff.inMinutes}m ago';
+    if (diff.inDays < 1) return '${diff.inHours}h ago';
+    return '${diff.inDays}d agp';
+  }
   
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -31,13 +39,20 @@ class MoodBoardScreen extends ConsumerWidget {
             itemCount: moods.length,
             itemBuilder: (context, index) {
               final mood = moods[index];
-              return ListTile(
-                leading: Text(
-                  mood.emoji,
-                  style: const TextStyle(fontSize: 32),
+              return Card(
+                margin: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                child: ListTile(
+                  leading: Text(
+                    mood.emoji,
+                    style: const TextStyle(fontSize: 32),
+                  ),
+                  title: Text(mood.note),
+                  subtitle: Text(mood.userEmail),
+                  trailing: Text(
+                    _formatTime(mood.createdAt),
+                    style: const TextStyle(fontSize: 12, color: Colors.grey),
+                  ),
                 ),
-                title: Text(mood.note),
-                subtitle: Text(mood.userEmail),
               );
             },
           );
