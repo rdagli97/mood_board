@@ -36,6 +36,7 @@ This project follows an MVVM-style structure:
 
 ## Project Structure
 
+```
 lib/
 ├── models/
 │   └── mood.dart
@@ -51,6 +52,7 @@ lib/
 ├── widgets/
 │   └── add_mood_dialog.dart
 └── main.dart
+```
 
 ## Getting Started
 
